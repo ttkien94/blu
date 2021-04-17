@@ -1,0 +1,470 @@
+import "style";ç
+/* 
+1. default css
+2. taskbar css
+3. home css
+. Footer css
+*/
+/* 1. default css */
+
+// img {
+//   width: 100%;
+// }
+// ul {
+//   list-style-type: none;
+// }
+// a {
+//   text-decoration: unset;
+// }
+/* 2. taskbar css */
+// @keyframes TfadeInUp {
+//   from {
+//     transform: translate(0%, 0px);
+//   }
+//   to {
+//     transform: translate(0%, -35px);
+//     opacity: 1;
+//   }
+// }
+// @keyframes Tfadeoutdown {
+//   from {
+//     transform: translate(0%, -35px);
+//   }
+//   to {
+//     transform: translate(0%, 0px);
+//     opacity: 1;
+//   }
+// }
+// @keyframes SfadeInUp {
+//   from {
+//     transform: translate(-50%, 20px);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: translate(-50%, 0px);
+//     opacity: 1;
+//   }
+// }
+// @keyframes Sfadeoutdown {
+//   from {
+//     transform: translate(-50%, 0px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: translate(-50%, 20px);
+//     opacity: 0;
+//   }
+// }
+// @keyframes Sfadegoleft {
+//   from {
+//     transform: translate(0%, 0px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: translate(100%, 0px);
+//     opacity: 1;
+//   }
+// }
+// @keyframes Sfadegoright {
+//   from {
+//     transform: translate(100%, 0px);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: translate(0%, 0px);
+//     opacity: 1;
+//   }
+// }
+/* End taskbar css */
+
+/* 3. home css */
+/* home banner */
+@keyframes fbannermovie {
+  0% {
+    right: 0px;
+    bottom: -200px;
+  }
+  25% {
+    right: 200px;
+    bottom: 0px;
+  }
+  50% {
+    right: 400px;
+    bottom: -150px;
+  }
+  100% {
+    right: 0px;
+    bottom: -200px;
+  }
+}
+@keyframes Textslider {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -36px;
+    animation-duration: 0.5s;
+  }
+  50% {
+    top: -72px;
+    animation-duration: 0.5s;
+  }
+  75% {
+    top: -36px;
+  }
+  100% {
+    top: 0;
+  }
+}
+/* end home banner */
+/* home about */
+/* clip cắt phần tử 
+  filter blur : dộ mờ ảnh
+  saturate mức độ bảo hòa màu
+  rect: bộ phận được giữ lại
+  rect(top,right,bottom,left)
+*/
+/* end home about */
+/* 3. End home css */
+/* Footer css */
+/* End Footer css */
+img {
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: unset;
+}
+.taskbar {
+  width: 120px;
+  height: 100vh;
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 10%);
+  z-index: 2;
+  position: fixed;
+  transition: all 0.3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  .avatar {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+  }
+  i {
+    width: 100%;
+    font-size: 35px;
+    height: 35px;
+  }
+  a {
+    text-decoration: unset;
+    display: inline-block;
+  }
+  ul {
+    padding-left: 0;
+    margin: 10px 10px;
+    display: inline-block;
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 10px 0 0px 0;
+      overflow: hidden;
+      width: 100%;
+      border-bottom: 1px solid gray;
+      height: 65px;
+    }
+  }
+  .taskbaricon {
+    height: 35px;
+    overflow: hidden;
+  }
+  .liabout {
+    .taskbaricon {
+      i {
+        animation: Tfadeoutdown;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+      }
+    }
+    &:hover {
+      .taskbaricon {
+        i {
+          animation: TfadeInUp;
+          animation-duration: 0.5s;
+          animation-fill-mode: both;
+        }
+      }
+      span {
+        animation: SfadeInUp;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+      }
+    }
+    span {
+      opacity: 0;
+      margin-top: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: Sfadeoutdown;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+    }
+  }
+  .about {
+    color: red;
+  }
+  .fa-address-card {
+    color: red;
+  }
+  .portfolio {
+    color: #00c8da;
+  }
+  .fa-briefcase {
+    color: #00c8da;
+  }
+  .contact {
+    color: #ffc454;
+  }
+  .fa-phone {
+    color: #ffc454;
+  }
+  .followme {
+    margin: 50px 0 30px 0;
+    transform: rotate(270deg);
+  }
+  .socialmedia {
+    margin: 20px 0 0 0;
+    li {
+      margin-top: 20px;
+      border: unset;
+      height: 35px;
+      display: block;
+      overflow: hidden;
+      i {
+        animation: Sfadegoright;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        &:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: -100%;
+        }
+      }
+      &:hover {
+        i {
+          animation: Sfadegoleft;
+          animation-duration: 0.5s;
+          animation-fill-mode: both;
+        }
+      }
+    }
+  }
+}
+.fa-facebook {
+  color: blue;
+}
+.fa-instagram {
+  color: red;
+  margin-right: 5px;
+}
+.home {
+  margin-left: 125px;
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.area-pt {
+  padding-top: 50px;
+}
+.banner {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  img {
+    height: 600px;
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: -300px;
+    animation: bannermovie 40s infinite;
+  }
+  .content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 20%;
+    transform: translate(-10%, -50%);
+    -webkit-transform: translate(-10%, -50%);
+    -moz-transform: translate(-10%, -50%);
+    -ms-transform: translate(-10%, -50%);
+    -o-transform: translate(-10%, -50%);
+  }
+  h1 {
+    font-size: 60px;
+    color: blue;
+  }
+  .hello {
+    color: white;
+    padding-left: 10px;
+    span {
+      color: black;
+      font-size: 40px;
+    }
+  }
+  .multiltext {
+    font-size: 24px;
+    height: 40px;
+    overflow: hidden;
+    padding-left: 10px;
+    font-weight: bold;
+    position: relative;
+    &::before {
+      width: 4px;
+      height: 40px;
+      z-index: -999;
+      background-color: orange;
+      content: ;
+      position: absolute;
+      left: 0;
+    }
+  }
+  ul {
+    left: 120px;
+    padding-left: 10px;
+    position: absolute;
+    z-index: 999;
+    animation: Textslider 10s infinite;
+    -webkit-animation: Textslider 10s infinite;
+  }
+}
+.content {
+  .hello {
+    &:after {
+      content: ;
+      width: 20%;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: orange;
+      z-index: -999;
+    }
+  }
+}
+.about {
+  h2 {
+    padding: 30px 0;
+  }
+}
+.aboutleft {
+  height: 500px;
+  width: 500px;
+  margin-left: 50px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  &:hover {
+    .aboutimg {
+      visibility: visible;
+    }
+    .aboutimg-1 {
+      transition-duration: 2s;
+      transform: translateX(500px);
+      -webkit-transform: translateX(500px);
+      -moz-transform: translateX(500px);
+      -ms-transform: translateX(500px);
+      -o-transform: translateX(500px);
+    }
+    .aboutimg-2 {
+      clip: rect(0px, 500px, 500px, 0px);
+      transition-duration: 2s;
+      transform: translateX(500px);
+      -webkit-transform: translateX(500px);
+      -moz-transform: translateX(500px);
+      -ms-transform: translateX(500px);
+      -o-transform: translateX(500px);
+    }
+    .aboutimg-3 {
+      transition-duration: 1.1s;
+      transition-delay: 0.6s;
+      transform: translateX(0);
+    }
+    .aboutimg-4 {
+      transition-duration: 0.8s;
+      transition-delay: 0.85s;
+      transform: translateX(500px);
+      -webkit-transform: translateX(500px);
+      -moz-transform: translateX(500px);
+      -ms-transform: translateX(500px);
+      -o-transform: translateX(500px);
+    }
+  }
+  .aboutimg-2 {
+    visibility: visible;
+    clip: rect(000px, 500px, 500px, 100px);
+    z-index: 1;
+    filter: blur(2px) saturate(80%);
+    transform: scale(1.03) translateX(-500px);
+    -webkit-transform: scale(1.03) translateX(-500px);
+    -moz-transform: scale(1.03) translateX(-500px);
+    -ms-transform: scale(1.03) translateX(-500px);
+    -o-transform: scale(1.03) translateX(-500px);
+    -webkit-filter: blur(2px) saturate(80%);
+  }
+  .aboutimg-3 {
+    transform: translateX(-500px);
+    z-index: 2;
+    -webkit-transform: translateX(-500px);
+    -moz-transform: translateX(-500px);
+    -ms-transform: translateX(-500px);
+    -o-transform: translateX(-500px);
+  }
+  .aboutimg-4 {
+    filter: sharpen(120%);
+    clip: rect(0px, 400px, 500px, 100px);
+    z-index: 3;
+    transform: translateX(-400px);
+    -webkit-filter: sharpen(120%);
+    -webkit-transform: translateX(-400px);
+    -moz-transform: translateX(-400px);
+    -ms-transform: translateX(-400px);
+    -o-transform: translateX(-400px);
+  }
+}
+.aboutimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: transform, clip;
+  transition-timing-function: ease-in-out;
+  visibility: hidden;
+}
+.aboutimg-1 {
+  visibility: visible;
+}
+.aboutright {
+  background: green;
+  margin-left: 50px;
+}
+.footer {
+  height: 100vh;
+  margin-left: 125px;
+}
